@@ -10,11 +10,15 @@ const getGenres = async () => {
   try {
     const response = await fetch(urlToFetch)
     if(response.ok) {
-      const jsonResponse = JSON.parse(response);
+      console.log('parsing response');
+      //const jsonResponse = await JSON.parse(response);
+      const jsonResponse = await response.json();
       console.log(jsonResponse);
-      const genres = jsonResponse.genres
+      const genres = jsonResponse.genres;
       console.log(genres);
+      return genres;
     }
+    throw new Error('Request failed');
   } catch(error) {
     console.log(error);
   }
@@ -40,5 +44,5 @@ const showRandomMovie = () => {
 
 };
 
-getGenres().then(populateGenreDropdown);
+getGenres().then(populateGenreDropdown, () => {console.log('rejected');});
 playBtn.onclick = showRandomMovie;

@@ -1,14 +1,17 @@
 body {
-    background-color: #7f0920;
-    color: #0a0408;
+    background-color: #4e4291;
+    color: #ffffff;
 }
 
 #appTitle {
     text-align: center;
     margin: 0px auto;
     display: block;
-    font-family: 'Staatliches', sans-serif;
+    /*font-family: 'Staatliches', sans-serif;
+    font-size: 80px;*/
+    font-family: 'Tangerine', serif;
     font-size: 80px;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
 
 #genreForm, #playBtn {
